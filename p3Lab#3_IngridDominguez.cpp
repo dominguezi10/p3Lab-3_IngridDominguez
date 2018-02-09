@@ -173,6 +173,9 @@ void ejercicio2(){
 
 //ejercicio 3
 void ejercicio3(){
+	int anio = 0;
+	int dia = 0;
+	int mes = 0;
         string fechaIngresada = "";
         cout<< "**** Ejemplo de fecha = 20170502"<< endl;
         cout<< "primero el año, luego el mes y por ultimo dia"<< endl;
@@ -180,7 +183,6 @@ void ejercicio3(){
         bool condicion = true;
 
         while(condicion){
-
                 cout<< "Ingrese su fecha: ";
                 cin>> fechaIngresada;
 
@@ -197,29 +199,76 @@ void ejercicio3(){
                         condicion = true;
                 }else if(sizeFecha == 8){
                         cout<< "size correcto"<< endl;
-			int anio = 0;
+		//	int anio = 0;
 			anio =  atoi((fechaIngresada.substr(0,4)).c_str());
-			int mes =0;
+		//	int mes =0;
 			mes =  atoi((fechaIngresada.substr(4,2)).c_str());
-			int dia = 0;
+		//	int dia = 0;
 			dia = atoi((fechaIngresada.substr(6,2)).c_str());
 			cout<< anio<< " " << mes << " "<< dia << endl;	
 		
+			int contErrores = 0;
 			if(anio <0 || anio >2018){
-				condicion = true;
-			}else if(mes <0 || mes >12){
-				condicion = true;
-			}else if(dia >31){
-				condicion = true;
-			}else{
-				condicion = false;
+				contErrores++;
 			}
-                }else{
-                //      condicion = false;
-                }
+
+			if(mes <0 || mes >12){
+				contErrores++;
+			}
+			
+			if(dia >31){
+				contErrores++;
+			}
+			
+			if((anio%4 == 0) &&  (mes== 2) && (dia >29)){
+				contErrores++;
+			}
+
+			if(anio%4 !=0 && mes== 2 && dia>28){
+				contErrores++;
+			}
+
+			if(contErrores==0){
+				cout<< "Fecha ingresada correctamente! "<< endl;
+				condicion = false;
+				
+			}else{
+				condicion = true;
+			}
+                }//  fin
 
         }// fin del while
 
+	string salida = "";
+	if(dia<9){
+		cout<< 0<< dia;
+	}else{
+		cout<<dia;	
+	}
+
+	
+	switch(mes){
+		case 1:
+			salida += ", de Enero ";
+			break;
+		case 2:
+			salida += ", de Febrero ";
+			break;
+		case 3:
+			salida += ", de Marzo ";
+			break;
+
+	}
+
+
+	cout<< salida << " del "<< anio << endl;
+
+
+
+
+
+
+		
 
 }// fin del ejercicio 3
 
