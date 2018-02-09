@@ -257,6 +257,33 @@ void ejercicio3(){
 		case 3:
 			salida += ", de Marzo ";
 			break;
+		case 4:
+			salida += ", de Abril";
+			break;
+		case 5:
+			salida+= ", de Mayo";
+			break;
+		case 6:
+			salida+= ", de Junio";
+			break;
+		case 7:
+			salida+= ", de Julio";
+			break;
+		case 8:
+			salida += ", de Agosto";
+			break;
+		case 9:
+			salida += ", de Septiembre";
+			break;
+		case 10:
+			salida += ", de Octubre";
+			break;
+		case 11:
+			salida += ", de Noviembre";
+			break;
+		case 12:
+			salida += ", de Diciembre";
+			break;
 
 	}
 
