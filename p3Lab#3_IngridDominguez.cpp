@@ -96,8 +96,9 @@ void ejercicio1(){
 
 	for(int i = 0; i<nuevoSize; i++){
 		cout<< arregloNumero[i]<< " ";
-
 	}
+
+	
 
 	cout<< endl;
 
@@ -202,7 +203,33 @@ void ejercicio3(){
         string fechaIngresada = "";
         cout<< "**** Ejemplo de fecha = 20170502"<< endl;
         cout<< "primero el año, luego el mes y por ultimo dia"<< endl;
-
+	int esteDia = rand()%7+1;
+	string estedia = "";
+	//cout<< esteDia<< endl;
+	switch(esteDia){
+		case 1:
+			estedia = "Lunes ";
+			break;
+		case 2:
+			estedia = "Martes ";
+			break;
+		case 3:
+			estedia = "Miercoles";
+			break;
+		case 4:
+			estedia = "Jueves ";
+			break;
+		case 5:
+			estedia = "Viernes ";
+			break;
+		case 6:
+			estedia = "Sabado ";
+			break;
+		case 7:
+			estedia = "Domingo ";
+			break;
+	}
+	
         bool condicion = true;
 
         while(condicion){
@@ -266,6 +293,7 @@ void ejercicio3(){
 
         }// fin del while
 
+	cout<< estedia<< " ";
 	string salida = "";
 	if(dia<9){
 		cout<< 0<< dia;
@@ -273,7 +301,10 @@ void ejercicio3(){
 		cout<<dia;	
 	}
 
-	
+		
+
+
+
 	switch(mes){
 		case 1:
 			salida += ", de Enero ";
