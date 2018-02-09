@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <stdlib.h>
 
 
 using namespace std;
@@ -74,9 +75,31 @@ void ejercicio1(){
 	        cin >> size;
 	}// fin del if
 	
+	int residuo = size%5;
+	int loqueFalta = 5-residuo;
+
+	int nuevoSize = size +loqueFalta;
+
+	cout<<loqueFalta<< " "<< size << "  " << nuevoSize<<endl;	
 
 
+	int arregloNumero [nuevoSize];
+	for(int i= 0; i<size; i++){
+		arregloNumero[i] = rand()%100+1;
+	}// fin del for
 
+
+	for(int i = size;i< nuevoSize ; i++){
+		arregloNumero[i] = 0;
+	}
+
+
+	for(int i = 0; i<nuevoSize; i++){
+		cout<< arregloNumero[i]<< " ";
+
+	}
+
+	cout<< endl;
 
 
 }//  fin del metodo
@@ -228,6 +251,10 @@ void ejercicio3(){
 				contErrores++;
 			}
 
+			if(anio== 2018 && mes>2 && dia>9){
+				contErrores++;
+			}
+
 			if(contErrores==0){
 				cout<< "Fecha ingresada correctamente! "<< endl;
 				condicion = false;
@@ -288,16 +315,10 @@ void ejercicio3(){
 	}
 
 
-	cout<< salida << " del "<< anio << endl;
-
-
-
-
-
-
-		
+	cout<< salida << " del "<< anio << endl;		
 
 }// fin del ejercicio 3
+
 
 
 
